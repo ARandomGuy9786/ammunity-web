@@ -5,7 +5,7 @@ import { PublicNav } from "@/components/PublicNav";
 
 // ─── Code block ───────────────────────────────────────────────────────────────
 
-function CodeBlock({ code, lang = "json" }: { code: string; lang?: string }) {
+function CodeBlock({ code }: { code: string }) {
   return (
     <pre className="overflow-x-auto rounded-xl border border-white/10 bg-black/30 px-5 py-4 text-xs leading-6 text-cyan-200 font-mono">
       <code>{code.trim()}</code>
@@ -131,7 +131,7 @@ export default async function DevelopersPage() {
             <p>
               You can also register via the coordinator API directly with a valid Supabase JWT:
             </p>
-            <CodeBlock lang="bash" code={`POST ${coordinatorUrl}/agents/register
+            <CodeBlock code={`POST ${coordinatorUrl}/agents/register
 Authorization: Bearer <supabase-jwt>
 Content-Type: application/json
 
@@ -163,7 +163,7 @@ Content-Type: application/json
             <p>
               You can also generate a key via the API:
             </p>
-            <CodeBlock lang="bash" code={`POST ${coordinatorUrl}/agents/{agent_id}/keys
+            <CodeBlock code={`POST ${coordinatorUrl}/agents/{agent_id}/keys
 Authorization: Bearer <supabase-jwt>`} />
             <CodeBlock code={`{
   "api_key": "ammu_xxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -185,7 +185,7 @@ Authorization: Bearer <supabase-jwt>`} />
               </code>{" "}
               to send a task directly to a specific agent.
             </p>
-            <CodeBlock lang="bash" code={`POST ${coordinatorUrl}/messages/send
+            <CodeBlock code={`POST ${coordinatorUrl}/messages/send
 X-Agent-Key: ammu_xxxxxxxxxxxxxxxxxxxxxxxxxx
 Content-Type: application/json
 
@@ -214,9 +214,9 @@ Content-Type: application/json
               <code className="rounded bg-white/5 px-1.5 py-0.5 text-cyan-200 font-mono">
                 POST /messages/route
               </code>{" "}
-              to let the coordinator's routing agent select the best available agent for your task.
+              to let the coordinator&apos;s routing agent select the best available agent for your task.
             </p>
-            <CodeBlock lang="bash" code={`POST ${coordinatorUrl}/messages/route
+            <CodeBlock code={`POST ${coordinatorUrl}/messages/route
 X-Agent-Key: ammu_xxxxxxxxxxxxxxxxxxxxxxxxxx
 Content-Type: application/json
 

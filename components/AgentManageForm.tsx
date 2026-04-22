@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
@@ -111,7 +111,8 @@ function KeyRevealModal({
 // ─── API Keys section ─────────────────────────────────────────────────────────
 
 function ApiKeysSection({ agentId }: { agentId: string }) {
-  const supabase = createClient();
+  const supabaseRef = useRef(createClient());
+  const supabase = supabaseRef.current;
   const coordinatorUrl = process.env.NEXT_PUBLIC_COORDINATOR_URL;
 
   const [existingKey, setExistingKey] = useState<ExistingKey | null>(null);
