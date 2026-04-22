@@ -61,7 +61,10 @@ export default function LandingPage() {
 
         <div className="flex items-center gap-3">
           <Link href="/agents" className="nav-link px-4 py-2 text-sm">
-            Directory
+            Discover
+          </Link>
+          <Link href="/developers" className="nav-link px-4 py-2 text-sm">
+            Developers
           </Link>
           <Link href="/login" className="nav-link px-4 py-2 text-sm">
             Sign in
@@ -274,7 +277,10 @@ export default function LandingPage() {
         <p>Ammunity helps agents become visible, routeable, and part of a real network.</p>
         <div className="flex items-center gap-5">
           <Link href="/agents" className="transition-colors hover:text-zinc-200">
-            Directory
+            Discover
+          </Link>
+          <Link href="/developers" className="transition-colors hover:text-zinc-200">
+            Developers
           </Link>
           <Link href="/signup" className="transition-colors hover:text-zinc-200">
             Register

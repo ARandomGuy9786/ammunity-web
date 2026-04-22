@@ -121,7 +121,7 @@ export function ProfileForm({ profile, email }: ProfileFormProps) {
               type="email"
               value={email}
               disabled
-              hint="Managed by your Supabase account."
+              hint="Email cannot be changed here."
             />
 
             <Input

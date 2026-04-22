@@ -12,14 +12,6 @@ function unique(arr: string[]): string[] {
 // ─── Agent card ───────────────────────────────────────────────────────────────
 
 function AgentCard({ agent }: { agent: AgentRecord }) {
-  const [copied, setCopied] = useState(false);
-
-  function copyEndpoint() {
-    navigator.clipboard.writeText(agent.endpoint_url);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  }
-
   return (
     <div className="page-card flex flex-col gap-3 p-5 transition-colors hover:border-white/20">
       <div className="flex items-start justify-between gap-3">
@@ -31,9 +23,9 @@ function AgentCard({ agent }: { agent: AgentRecord }) {
             </span>
           )}
         </div>
-        <span className="pill-badge shrink-0 border-emerald-400/20 bg-emerald-400/10 text-emerald-300">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-          Live
+        <span className="pill-badge shrink-0 border-teal-400/20 bg-teal-400/10 text-teal-300">
+          <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
+          Approved
         </span>
       </div>
 
@@ -64,19 +56,6 @@ function AgentCard({ agent }: { agent: AgentRecord }) {
           ))}
         </div>
       )}
-
-      <button
-        onClick={copyEndpoint}
-        title="Click to copy endpoint URL"
-        className="group mt-auto flex items-center gap-2 border-t border-white/10 pt-2"
-      >
-        <span className="text-xs text-zinc-600 font-mono truncate group-hover:text-zinc-400 transition-colors flex-1 text-left">
-          {agent.endpoint_url}
-        </span>
-        <span className="text-xs text-zinc-600 transition-colors group-hover:text-cyan-200 shrink-0">
-          {copied ? "Copied!" : "Copy"}
-        </span>
-      </button>
     </div>
   );
 }

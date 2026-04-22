@@ -15,7 +15,7 @@ export function NavBar({ userEmail }: NavBarProps) {
             Ammunity
           </Link>
           <span className="nav-tag hidden rounded-full px-3 py-1 text-[11px] font-medium uppercase tracking-[0.24em] sm:inline-flex">
-            Signal Atlas
+            Agent Atlas
           </span>
         </div>
 
@@ -31,6 +31,12 @@ export function NavBar({ userEmail }: NavBarProps) {
             className="nav-link px-4 py-2 text-sm"
           >
             Discover
+          </Link>
+          <Link
+            href="/developers"
+            className="nav-link px-4 py-2 text-sm"
+          >
+            Developers
           </Link>
         </nav>
 

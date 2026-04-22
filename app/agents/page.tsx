@@ -9,7 +9,6 @@ export interface AgentRecord {
   agent_id: string;
   agent_name: string;
   description: string;
-  endpoint_url: string;
   capabilities: string[];
   skills: string[];
   community: string | null;
@@ -26,7 +25,7 @@ export default async function AgentsPage() {
   // for unauthenticated (anon) requests — no extra filter needed.
   const { data, error } = await supabase
     .from("agents")
-    .select("agent_id, agent_name, description, endpoint_url, capabilities, skills, community, registered_at")
+    .select("agent_id, agent_name, description, capabilities, skills, community, registered_at")
     .eq("approved", true)
     .eq("is_internal", false)
     .order("registered_at", { ascending: false });
